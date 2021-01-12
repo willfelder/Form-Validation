@@ -22,11 +22,11 @@ formBox.addEventListener('submit', (e) => {
           }
 
           if(emailBoxValue === ''){
-              setErrorFor(emailBox, 'Email can not be blank');
-          } else if(!isEmail(emailBox)) {
-              setErrorFor(emailBox, 'Email is not valid')
+              setErrorFor(email, 'Email can not be blank');
+          } else if(!isEmail(emailBoxValue)) {
+              setErrorFor(email, 'Email is not valid')
           } else {
-              setSucessFor(emailBox);
+              setSucessFor(email);
           }
    }
 
@@ -43,6 +43,6 @@ formBox.addEventListener('submit', (e) => {
         formControlBox.className = 'form-control-area sucess';
     }
 
-    function isEmail(emailBox){
-        return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/test(emailBox);
+    function isEmail(email){
+        return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/test(email);
     }
