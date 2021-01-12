@@ -1,48 +1,57 @@
-const formBox = document.getElementById('formbox');
-const usernameBox = document.getElementById('username');
-const emailBox = document.getElementById('email');
-const passwordBox = document.getElementById('password');
-const passordCheckBox = document.getElementById('passwordTwo');
+const form = document.getElementById('form');
+const username = document.getElementById('username');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const password2 = document.getElementById('password2');
 
-formBox.addEventListener('submit', (e) => {
-    e.preventDefault();
+    form.addEventListener('submit', e => {
+        e.preventDefault();
         checkInputs();
-});
+    });
 
-   function checkInputs(){
-       const usernameBoxValue = usernameBox.value.trim();
-       const emailBoxValue = emailBox.value.trim();
-       const passwordBoxValue = passwordBox.value.trim();
-       const passordCheckBoxValue = passordCheckBox.value.trim();
+        function checkInputs(){
+            const usernameValue = username.value.trim();
+            const emailValue = email.value.trim();
+            const passwordValue = password.value.trim();
+            const password2Value = password2.value.trim();
 
-          if(usernameBoxValue === ''){
-              setErrorFor(usernameBox, 'Username can not be blank');
-          } else {
-              setSucessFor(usernameBox);
-          }
+                if(usernameValue === ''){
+                    setErrorFor(username, 'Username can not be blank')
+                } else {
+                    setSucessFor(username);
+                }
 
-          if(emailBoxValue === ''){
-              setErrorFor(email, 'Email can not be blank');
-          } else if(!isEmail(emailBoxValue)) {
-              setErrorFor(email, 'Email is not valid')
-          } else {
-              setSucessFor(email);
-          }
-   }
+                if(emailValue === ''){
+                    setErrorFor(email, 'E-mail can not be blank')
+                } else {
+                    setSucessFor(email);
+                }
 
-    function setErrorFor(input, message){
-        const formControlBox = input.parentElement;
-        const smallBox = formControlBox.querySelector('small');
+                if(passwordValue === ''){
+                    setErrorFor(password, 'Password can not be blank')
+                } else {
+                    setSucessFor(password);
+                }
 
-        smallBox.innerText = message;
-        formControlBox.className = 'form-control-area error';
-    }
+                if(password2Value === ''){
+                    setErrorFor(password2, 'Password can not be blank')
+                } else {
+                    setSucessFor(password2);
+                }
+        }
 
-    function setSucessFor(input){
-        const formControlBox = input.parentElement;
-        formControlBox.className = 'form-control-area sucess';
-    }
+        function setErrorFor(input, message){
+            const formControl = input.parentElement;
+            const small = formControl.querySelector('small');
+            formControl.className = 'form-control error';
+            small.innerText = message;
+        }
 
-    function isEmail(email){
-        return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/test(email);
-    }
+        function setSucessFor(input){
+            const formControl = input.parentElement;
+            formControl.className = 'form-control sucess'
+        }
+
+        function isEmail(email){
+            return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+        }
