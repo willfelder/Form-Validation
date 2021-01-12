@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Create Account</h2>
+        </div>
+
+        <form class="formbox" id="formbox">
+            <div class="form-control-area">
+                <label>Username</label>
+                <input type="text" placeholder="willfelder" id="username">
+                <i class="check-circle-icon"></i>
+                <i class="exaclamation-icon"></i>
+                <small>Error message</small>
+            </div>
+
+            <div class="form-control-area">
+                <label>Email</label>
+                <input type="email" placeholder="willfelder@willfelder.com" id="email">
+                <i class="check-circle-icon"></i>
+                <i class="exaclamation-icon"></i>
+                <small>Error message</small>
+            </div>
+
+            <div class="form-control-area">
+                <label>Password</label>
+                <input type="password" placeholder="password" id="password">
+                <i class="check-circle-icon"></i>
+                <i class="exaclamation-icon"></i>
+                <small>Error message</small>
+            </div>
+
+            <div class="form-control-area">
+                <label>Password Check</label>
+                <input type="password" placeholder="password two" id="passwordTwo">
+                <i class="check-circle-icon"></i>
+                <i class="exaclamation-icon"></i>
+                <small>Error message</small>
+            </div>
+      
+        <button>Submit</button>
+        
+       </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
